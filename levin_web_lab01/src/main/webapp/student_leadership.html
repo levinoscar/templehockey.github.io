@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Use this type of comment within HTML -->
+        <title>Temple Ice Hockey</title>
+
+        <!-- this is your internal style sheet -->
+        <style> 
+
+            /*  You can only use the "slash star ... star slash" style comment inside a style sheet */
+           
+            html, body {   /* Prevents tiny white border inside browser window. */
+                margin:0rem; 
+                padding:0rem; 
+            }
+
+            body { 
+                background-color: rgb(112, 14, 14); /* red, green, blue (255 is max)
+                                                         this is the turqoise color */
+                color: white;  /* color of font */
+                font-family: sans-serif; /* "no tail" font is more readable for small font */
+            }
+
+            #titleNav { /* titleNav is fixed, always at the top */
+
+                /* position fixed removes the element from the normal flow, 
+                   placing it w.r.t. the browser's edge as specified by top/bottom, left/right */
+                position:fixed; 
+                top:0rem;
+                left:0rem;
+                z-index: 1;     /* To make sure titleNav is on top of content, 
+                                   give it a higher z-index than content 
+                                   (which has the default value, zero). */
+                width: 100%;    /* fixed elements are not 100% by default like other divs would be */
+
+                font-family: serif; 
+                letter-spacing: 0.1rem; /* spaces out letters a bit */
+                color: #8b0000;   /* font color */
+                background-color:black;  
+                padding:0.5rem;
+            }
+
+            #pageTitle { 
+                font-size:3rem;
+            }
+
+            #nav { 
+                text-align:right;
+                font-size:1rem;
+                font-weight:bold;
+            }
+
+            #nav a {  /* this selector applies to links within #nav */
+                text-decoration:none;  /* Do not want links in "nav" to be underlined */
+                color: #C8C8C8; /* light gray: to specify color for links, you have to style the "a" tag */
+            }
+
+            #content {  /* Add padding top to prevent titleNav from covering up top of content. 
+                           add padding bottom to prevent bottom content from getting hidden under footer. */ 
+                padding:1rem;
+                padding-top: 6rem; /* prevent the top of the content from getting hidden under the fixed titleNav */
+                padding-bottom: 2rem; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+            }
+            
+            #content img { /* this selector applies to images within #content */
+                width: 40%;
+                border-radius: 0.5rem;
+                box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+            }
+                    
+            #footer { /* footer fixed, always at the bottom left */
+                position: fixed;
+                bottom: 0rem; 
+                left: 0rem; 
+                z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+
+                background-color:black;
+                color: white; 
+                width:100%; /* fixed elements are not 100% by default like other divs would be */
+                text-align:center;
+                padding:0.5rem;	 	 
+            }
+
+        </style>
+    </head>
+    <body>
+
+        <div id="titleNav">
+            <div id="pageTitle">Temple Hockey Student Leaders 2023-24</div>
+        </div>
+
+        <div id="content">
+
+            <section class = "teamSection" id = "teamSection">
+                <div class="teamTabContainer">
+                    <div class="teamButtonContainer">
+                        <style>
+                            .expandable-button {
+                                padding: 10px 20px; /* Adjust the padding to change button size */
+                                background-color: darkred; /* Change the background color to dark red */
+                                color: black; /* Change the text color to black */
+                                border: 1px solid white; /* Add a white border */
+                                cursor: pointer;
+                                transition: all 0.3s;
+                            }
+                          
+                            .expanded {
+                                width: 150%; /* Expand to full width */
+                            }
+                        </style>
+                          
+                        <script>
+                            function showPanel(panelIndex) {
+                                // Get all buttons
+                                var buttons = document.querySelectorAll('.expandable-button');
+                          
+                                // Toggle expansion for the clicked button
+                                buttons[panelIndex].classList.toggle('expanded');
+                          
+                                // Collapse other buttons
+                                for (var i = 0; i < buttons.length; i++) {
+                                    if (i !== panelIndex) {
+                                        buttons[i].classList.remove('expanded');
+                                    }
+                                }
+                            }
+                        </script>
+
+                        <style>
+                            .expandable-button {
+                                width: 200px; /* Adjust the width as needed */
+                                height: 100px; /* Adjust the height as needed */
+                                margin-left: 10px;
+                                margin-right: 10px;
+                                font-size: 25px; /* Adjust the font size as needed */
+                            }
+                        </style>
+                          
+                        <button class="expandable-button" onclick="showPanel(0)">President</button>
+                        <button class="expandable-button" onclick="showPanel(1)">Vice President</button>
+                        <button class="expandable-button" onclick="showPanel(2)">Secretary</button>
+                        <button class="expandable-button" onclick="showPanel(3)">Treasurer</button>
+                        <button class="expandable-button" onclick="showPanel(4)">Fundraising</button>
+                        <button class="expandable-button" onclick="showPanel(5)">Media</button>
+                          
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle">Team President: Robert Pilarski (Senior)</div>
+                        <br>
+                        <img src="pics/RobertPilarski.jpeg" alt="..." style="width:30%; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+                            Vice President: Hunter Ringwood (Senior) & Nolan Sauer (Junior)
+                        </div>
+                        <br>
+                        <br>
+                        <img src="pics/HunterRingwood.jpg" alt="..." style="width:45%; margin-right: 60px; padding-top: 15;">
+                        <img src="pics/NolanSauer.jpg" alt="..." style="width:45%; margin-left: 60px; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle">Secretary: Cally Moran (Junior)</div>
+                        <br>
+                        <img src="pics/CallenMoran.jpg" alt="..." style="width:45%; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle">Treasurer: Seth Lerner (Junior)</div>
+                        <br>
+                        <img src="pics/SethLerner.jpg" alt="..." style="width:45%; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle">Fundraising Coordinator: CJ Phillips (Junior)</div>
+                        <br>
+                        <img src="pics/CJPhillips.jpg" alt="..." style="width:30%; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                    <div class="teamTabPanel">
+                        <!-- This <br> tag creates a new line (empty space) -->
+                        <br>
+                        <div id="pageTitle">Media: Brandon Barrett (Sophomore)</div>
+                        <br>
+                        <img src="pics/BrandonBarrett.jpg" alt="..." style="width:45%; padding-top: 15;">
+                        <br>
+                        <br>
+                    </div>
+                </div>
+                <script src="script.js"></script>
+            </section>
+        </div>
+    </body>
+</html>

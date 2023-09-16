@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <!-- Use this type of comment within HTML -->
+        <title>Temple Ice Hockey</title>
+
+        <!-- this is your internal style sheet -->
+        <style> 
+
+            /*  You can only use the "slash star ... star slash" style comment inside a style sheet */
+           
+            html, body {   /* Prevents tiny white border inside browser window. */
+                margin:0rem; 
+                padding:0rem; 
+            }
+
+            body { 
+                background-color: rgb(112, 14, 14); /* red, green, blue (255 is max) */
+                color: white;  /* color of font */
+                font-family: sans-serif; /* "no tail" font is more readable for small font */
+            }
+
+            #titleNav { /* titleNav is fixed, always at the top */
+
+                /* position fixed removes the element from the normal flow, 
+                   placing it w.r.t. the browser's edge as specified by top/bottom, left/right */
+                position:fixed; 
+                top:0rem;
+                left:0rem;
+                z-index: 1;     /* To make sure titleNav is on top of content, 
+                                   give it a higher z-index than content 
+                                   (which has the default value, zero). */
+                width: 100%;    /* fixed elements are not 100% by default like other divs would be */
+
+                font-family: serif; 
+                letter-spacing: 0.1rem; /* spaces out letters a bit */
+                color: #8b0000;   /* font color */
+                background-color:black;  
+                padding:0.5rem;
+            }
+
+            #pageTitle { 
+                font-size:3rem;
+            }
+
+            #nav { 
+                text-align:right;
+                font-size:1rem;
+                font-weight:bold;
+            }
+
+            #nav a {  /* this selector applies to links within #nav */
+                text-decoration:none;  /* Do not want links in "nav" to be underlined */
+                color: #C8C8C8; /* light gray: to specify color for links, you have to style the "a" tag */
+            }
+
+            #content {  /* Add padding top to prevent titleNav from covering up top of content. 
+                           add padding bottom to prevent bottom content from getting hidden under footer. */ 
+                padding:1rem;
+                padding-top: 6rem; /* prevent the top of the content from getting hidden under the fixed titleNav */
+                padding-bottom: 2rem; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+            }
+            
+            #content img { /* this selector applies to images within #content */
+                width: 40%;
+                border-radius: 0.5rem;
+                box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+            }
+                    
+            #footer { /* footer fixed, always at the bottom left */
+                position: fixed;
+                bottom: 0rem; 
+                left: 0rem; 
+                z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+
+                background-color:black;
+                color: white; 
+                width:100%; /* fixed elements are not 100% by default like other divs would be */
+                text-align:center;
+                padding:0.5rem;	 	 
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="titleNav">
+            <div id="pageTitle">2023-24 ECHA Standings</div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+            Pt Determination:
+        </div>
+
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+        <div class="flex-container">
+            <div class="flex-item">
+                3 pts -> Regulation Win
+                <br>
+                2 pts -> Overtime / Shootout Win
+                <br>
+                1 pt Overtime / Shootout Loss
+                <br>
+                0 pts -> Regulation Loss
+            </div>
+        </div>
+
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+            Tie Breaker Rules
+        </div>
+
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+        <div class="flex-container">
+            <div class="flex-item">
+                1. Regulation wins first, if tied for 1st, then,
+                <br>
+                2. Head to head record, if tied, then,
+                <br>
+                3. Goal differential between teams involved, if tied, then,
+                <br>
+                4. Goal differential from all league games, if again tied, then,
+                <br>
+                5. Coin Flip
+            </div>
+        </div>
+
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+            Standings
+        </div>
+
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+        <div class="flex-container">
+            <div class="flex-item">Teams</div>
+            <div class="flex-item">W</div>
+            <div class="flex-item">OTW / SOW</div>
+            <div class="flex-item">OTL / SOL</div>
+            <div class="flex-item">L</div>
+            <div class="flex-item">Total Pts</div>
+            <div class="flex-item">ECHA Rank (Default)</div>
+        </div>
+
+        <style>
+            .flex-container {
+                display: flex;
+            }
+          
+            .flex-item {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+
+        <div class="flex-container">
+            <div class="flex-item">George Mason</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">1</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Lehigh</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Navy</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">3</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Temple</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Villanova</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">5</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">West Chester</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">6</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">William Paterson</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">7</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">Towson</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">8</div>
+        </div>
+
+        <!-- This <br> tag creates a new line (empty space) -->
+        <br>
+        <br>
+
+        <style>
+            #content {
+                padding: 1rem;
+                padding-top: 6rem;
+                /* Set a fixed height for the content area */
+                height: calc(100vh - 8rem - 5rem); /* Adjust the value as needed */
+                overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+            }
+        </style>
+        
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+
+    </body>
+</html>
