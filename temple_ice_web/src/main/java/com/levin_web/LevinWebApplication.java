@@ -1,4 +1,4 @@
-package com.levin_web;
+package com.temple_ice_web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

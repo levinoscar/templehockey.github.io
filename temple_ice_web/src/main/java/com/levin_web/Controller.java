@@ -1,4 +1,4 @@
-package com.levin_web;
+package com.temple_ice_web;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController

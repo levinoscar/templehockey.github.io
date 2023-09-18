@@ -1,4 +1,4 @@
-package com.levin_web;
+package com.temple_ice_web;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
