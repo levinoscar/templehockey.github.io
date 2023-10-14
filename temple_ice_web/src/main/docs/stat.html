@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Use this type of comment within HTML -->
+        <title>Temple Ice Hockey</title>
+        <!-- this is your internal style sheet -->
+        <style> 
+            /*  You can only use the "slash star ... star slash" style comment inside a style sheet */
+           
+            html, body {   /* Prevents tiny white border inside browser window. */
+                margin:0rem; 
+                padding:0rem; 
+            }
+            body { 
+                background-color: rgb(112, 14, 14); /* red, green, blue (255 is max) */
+                color: white;  /* color of font */
+                font-family: sans-serif; /* "no tail" font is more readable for small font */
+            }
+            #titleNav { /* titleNav is fixed, always at the top */
+                /* position fixed removes the element from the normal flow, 
+                   placing it w.r.t. the browser's edge as specified by top/bottom, left/right */
+                position:fixed; 
+                top:0rem;
+                left:0rem;
+                z-index: 1;     /* To make sure titleNav is on top of content, 
+                                   give it a higher z-index than content 
+                                   (which has the default value, zero). */
+                width: 100%;    /* fixed elements are not 100% by default like other divs would be */
+                font-family: serif; 
+                letter-spacing: 0.1rem; /* spaces out letters a bit */
+                color: #8b0000;   /* font color */
+                background-color:black;  
+                padding:0.5rem;
+            }
+            #pageTitle { 
+                font-size:3rem;
+            }
+            #nav { 
+                text-align:right;
+                font-size:1rem;
+                font-weight:bold;
+            }
+            #nav a {  /* this selector applies to links within #nav */
+                text-decoration:none;  /* Do not want links in "nav" to be underlined */
+                color: #C8C8C8; /* light gray: to specify color for links, you have to style the "a" tag */
+            }
+            #content {  /* Add padding top to prevent titleNav from covering up top of content. 
+                           add padding bottom to prevent bottom content from getting hidden under footer. */ 
+                padding:1rem;
+                padding-top: 6rem; /* prevent the top of the content from getting hidden under the fixed titleNav */
+                padding-bottom: 2rem; /* prevent the the bottom of the content from getting hidden under the fixed footer */
+            }
+            
+            #content img { /* this selector applies to images within #content */
+                width: 40%;
+                border-radius: 0.5rem;
+                box-shadow: 0.4rem 0.4rem 0.4rem rgba(0,0,0,0.6); /* color is black which is 60% solid */
+            }
+                    
+            #footer { /* footer fixed, always at the bottom left */
+                position: fixed;
+                bottom: 0rem; 
+                left: 0rem; 
+                z-index: 1; /* make sure footer is on top of content which would have default z-index value of 0 */
+                background-color:black;
+                color: white; 
+                width:100%; /* fixed elements are not 100% by default like other divs would be */
+                text-align:center;
+                padding:0.5rem;	 	 
+            }
+        </style>
+    </head>
+    <body>
+        <div id="titleNav">
+            <div id="pageTitle">Temple Ice Owls 2023-24 Stats</div>
+        </div>
+        <!-- This <br> tag creates a new line (empty space) -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+            Player Stats
+        </div> 
+        <!-- This <br> tag creates a new line (empty space) -->
+        <br>
+        <br>
+        <br>
+        <div class="flex-container">
+            <div class="flex-item">Jersey #</div>
+            <div class="flex-item">Name</div>
+            <div class="flex-item">GP</div>
+            <div class="flex-item">G</div>
+            <div class="flex-item">A</div>
+            <div class="flex-item">Pts</div>
+            <div class="flex-item">Pt/G</div>
+            <div class="flex-item">PPG</div>
+            <div class="flex-item">SHG</div>
+            <div class="flex-item">GWG</div>
+            <div class="flex-item">SGW</div>
+            <div class="flex-item">PIM</div>
+        </div>
+        <style>
+            .flex-container {
+                display: flex;
+            }
+          
+            .flex-item {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+        <div class="flex-container">
+            <div class="flex-item">13</div>
+            <div class="flex-item">Brandon Barrett</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">9</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">17</div>
+            <div class="flex-item">2.13</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">6</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">11</div>
+            <div class="flex-item">Hunter Ringwood</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">12</div>
+            <div class="flex-item">1.5</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">13</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">9</div>
+            <div class="flex-item">Robert Pilarski "C"</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">9</div>
+            <div class="flex-item">1.13</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">39</div>
+            <div class="flex-item">Aiden Croce</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">9</div>
+            <div class="flex-item">1.13</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">6</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">23</div>
+            <div class="flex-item">Julien Rudolph "A"</div>
+            <div class="flex-item">7</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">9</div>
+            <div class="flex-item">1.29</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">23</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">24</div>
+            <div class="flex-item">Jeff Gross</div>
+            <div class="flex-item">7</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">1.14</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">8</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">37</div>
+            <div class="flex-item">Ryan Bechutsky</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">18</div>
+            <div class="flex-item">Cody Draves</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">0.75</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">8</div>
+            <div class="flex-item">Joe Stelacio</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">0.63</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">71</div>
+            <div class="flex-item">Nolan Sauer</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">5</div>
+            <div class="flex-item">0.63</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">34</div>
+            <div class="flex-item">Jake Lang</div>
+            <div class="flex-item">7</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">0.43</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">12</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">4</div>
+            <div class="flex-item">Ian Stonefield</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">0.38</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">12</div>
+            <div class="flex-item">CJ Phillips</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">0.38</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">14</div>
+            <div class="flex-item">Blake Richman</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0.25</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">16</div>
+            <div class="flex-item">Jordan Jaenisch</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0.33</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">6</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">7</div>
+            <div class="flex-item">Gabriel Bullard</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0.17</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">2</div>
+            <div class="flex-item">Seth Lerner</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0.13</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">32</div>
+            <div class="flex-item">Cally Moran</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0.13</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">4</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">5</div>
+            <div class="flex-item">Malik Lansdown</div>
+            <div class="flex-item">8</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0.13</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">44</div>
+            <div class="flex-item">Patrick Stelacio</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0.33</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">6</div>
+            <div class="flex-item">Hayden Leveroni</div>
+            <div class="flex-item">3</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">17</div>
+            <div class="flex-item">Carter Povazan</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">10</div>
+            <div class="flex-item">Alexander Lim</div>
+            <div class="flex-item">1</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">2</div>
+        </div>
+        <br> <!-- This <br> tag creates a new line (empty space) -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div id="pageTitle" style="display: inline-block; margin-right: 10px;">
+            Goalie Stats
+        </div> 
+        <div class="flex-container">
+            <div class="flex-item">Jersey #</div>
+            <div class="flex-item">Name</div>
+            <div class="flex-item">GP</div>
+            <div class="flex-item">W</div>
+            <div class="flex-item">L</div>
+            <div class="flex-item">OTL/SOL</div>
+            <div class="flex-item">GA</div>
+            <div class="flex-item">GAA</div>
+            <div class="flex-item">Saves</div>
+            <div class="flex-item">Sv%</div>
+            <div class="flex-item">SO</div>
+            <div class="flex-item">Mins</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">31</div>
+            <div class="flex-item">Nick Golis</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">4</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">23</div>
+            <div class="flex-item">3.83</div>
+            <div class="flex-item">211</div>
+            <div class="flex-item">.902</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">360</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">30</div>
+            <div class="flex-item">Oscar Levin</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">6</div>
+            <div class="flex-item">2.95</div>
+            <div class="flex-item">71</div>
+            <div class="flex-item">.922</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">122</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">1</div>
+            <div class="flex-item">Aleksei Maitre</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">.000</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <div class="flex-container">
+            <div class="flex-item">41</div>
+            <div class="flex-item">Bo Solomon</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">.000</div>
+            <div class="flex-item">0</div>
+            <div class="flex-item">0</div>
+        </div>
+        <br>
+        <br>
+        <style>
+            #content {
+                padding: 1rem;
+                padding-top: 6rem;
+                /* Set a fixed height for the content area */
+                height: calc(100vh - 8rem - 5rem); /* Adjust the value as needed */
+                overflow-y: auto; /* Enable vertical scrolling when content exceeds the height */
+            }
+        </style>
+        <br>
+    </body>
+</html>
